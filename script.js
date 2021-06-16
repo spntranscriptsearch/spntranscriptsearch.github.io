@@ -9,33 +9,21 @@ function run() {
     
     span.innerHTML += "Searching " + s + "<br>";
     
+    var eps = [22, 22, 16, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 20, 20];
     
-    
-    
-    // season 1
-    for (var i = 1; i <= 18; i++) {
-        var file = 'transcripts/1/' + i + '.txt';
-//        span.textContent += file;
-        
-        $.ajax({
-            url:file,
-            success: function (data) {
-                if (data.toLowerCase().includes(s)) {
-                    span.innerHTML += ("1." + i + "<br>");
-                }
-                // prints content of file in lower case
-            },
-            async: false
-        });
-    }
-    
-    
-    // season 2
+    for (var j = 1; j <= 15; j++) {
+        for (var i = 1; i <= eps[j - 1]; i++) {
+            var file = 'transcripts/' + j + '/' + i + '.txt';
 
-    
-    
-    var txt = document.createTextNode(result);
-    span.appendChild(txt);
-    
-    
+            $.ajax({
+                url:file,
+                success: function (data) {
+                    if (data.toLowerCase().includes(s)) {
+                        span.innerHTML += (j + "." + i + "<br>");
+                    }
+                },
+                async: false
+            });
+        }
+    }
 }

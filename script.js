@@ -20,9 +20,9 @@ function run(j) {
             success: function (data) {
                 if (data.toLowerCase().includes(s)) {
                     if (i < 10) {
-                        span.innerHTML += (j + ".0" + i + "<br>");
+                        span.innerHTML += (j + ".0" + i + " ");
                     } else {
-                        span.innerHTML += (j + "." + i + "<br>");
+                        span.innerHTML += (j + "." + i + " ");
                     }
                     
                 }
@@ -30,6 +30,7 @@ function run(j) {
             async: false
         });
     }
+    span.innerHTML += "<br/>";
 }
 
 function runall() {
@@ -43,23 +44,27 @@ function runall() {
     span.innerHTML += "Searching " + s + "<br>";
     
     for (var j = 1; j <= 15; j++) {
+        var found = false;
         for (var i = 1; i <= eps[j - 1]; i++) {
             var file = 'transcripts/' + j + '/' + i + '.txt';
 
             $.ajax({
                 url:file,
                 success: function (data) {
-                    if (data.toLowerCase().includes(s)) {
-                        if (i < 10) {
-                            span.innerHTML += (j + ".0" + i + "<br>");
-                        } else {
-                            span.innerHTML += (j + "." + i + "<br>");
+                        if (data.toLowerCase().includes(s)) {
+                            if (i < 10) {
+                                span.innerHTML += (j + ".0" + i + " ");
+                                found = true;
+                            } else {
+                                span.innerHTML += (j + "." + i + " ");
+                                found = true;
                         }
-
                     }
                 },
                 async: false
             });
         }
+        if (found) span.innerHTML += "<br/>";
     }
+    span.innerHTML += "<br/>";
 }

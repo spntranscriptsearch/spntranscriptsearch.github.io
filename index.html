@@ -25,6 +25,10 @@
             #searchbar {
                 margin: 10px;
             }
+            
+            #results {
+                font-size: 16px;
+            }
         </style>
     </head>
 
@@ -51,6 +55,7 @@
         <button style="background-color:#ccbeff" onClick="run(14)">Search S14</button>
         <button style="background-color:#efbeff" onClick="run(15)">Search S15</button>
         <br/>
+        <button onClick="runall()">Search All</button>
         <button onClick="clean()">Clear</button>
         <br/>
         <span id="results"></span>

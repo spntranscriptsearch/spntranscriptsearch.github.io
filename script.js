@@ -19,7 +19,12 @@ function run(j) {
             url:file,
             success: function (data) {
                 if (data.toLowerCase().includes(s)) {
-                    span.innerHTML += (j + "." + i + "<br>");
+                    if (i < 10) {
+                        span.innerHTML += (j + ".0" + i + "<br>");
+                    } else {
+                        span.innerHTML += (j + "." + i + "<br>");
+                    }
+                    
                 }
             },
             async: false

@@ -2,8 +2,8 @@ toggle(id);
 
 function toggle(id) {
     var n = document.getElementById(id);
-    if (n.style.display != 'none') n.style.display = 'none';
-    else n.style.display = 'block';
+    if (n.style.display != 'block') n.style.display = 'block';
+    else n.style.display = 'none';
     // n.style.display = (n.style.display != 'none' ? 'none' : 'block');
 }
 

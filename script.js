@@ -1,10 +1,15 @@
-toggle(id);
+var first = true;
 
 function toggle(id) {
     var n = document.getElementById(id);
-    if (n.style.display != 'block') n.style.display = 'block';
-    else n.style.display = 'none';
-    // n.style.display = (n.style.display != 'none' ? 'none' : 'block');
+    if (first) { // sigh
+        n.style.display = 'block';
+        first = false;
+    } else {
+        if (n.style.display != 'block') n.style.display = 'block';
+        else n.style.display = 'none';
+        // n.style.display = (n.style.display != 'none' ? 'none' : 'block');
+    }
 }
 
 function clean() {

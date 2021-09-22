@@ -24,8 +24,9 @@
                 padding: 5px;
                 border-radius: 5pc;
                 font-family: monospace;
-                border:2px solid gray;
-                cursor: pointer
+                border: 2px solid gray;
+                transition: 0.3s;
+                cursor: pointer;
             }
             
             button:hover {
@@ -83,12 +84,12 @@ background: linear-gradient(0deg, rgba(212,252,232,1) 0%, rgba(177,221,242,1) 10
             
             #sbut {
                 margin:auto;
-                margin-bottom: 3px;
                 padding: 5px;
                 border-radius: 20px;
                 transition: 0.3s;
                 background-color: rgba(255,255,255,0.7);
                 width: 80%;
+                display: none;
             }
             
             #sbut:hover {
@@ -114,7 +115,7 @@ background: linear-gradient(0deg, rgba(212,252,232,1) 0%, rgba(177,221,242,1) 10
             <button style="background-color:white" onClick="clean()">Clear</button>
             <div id="seasons">
                 <button type="button" id="collapsible" onClick="toggle('sbut')">By-Season Options</button>
-                <div id="sbut" style="display:none">
+                <div id="sbut">
                     <span style="font-size:12px;">Click any of the below buttons to search those specific seasons.</span><br/>
                     <button class="ss" style="background-color:#fda3b4" onClick="run(1)">S1</button>
                     <button class="ss" style="background-color:#feb5a4" onClick="run(2)">S2</button>

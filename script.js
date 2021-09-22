@@ -1,3 +1,8 @@
+function toggle(id) {
+    var n = document.getElementById(id);
+    n.style.display = (n.style.display != 'none' ? 'none' : '');
+}
+
 function clean() {
     document.getElementById("results").innerHTML = "";
 }
@@ -10,7 +15,7 @@ function run(j) {
         return;
     }
     
-    span.innerHTML += "Searching " + s + "<br>";
+    span.innerHTML += "<span style=\"color:#84acba\">Season " + j + " results for </span>\"" + s + "\"<br>";
     
     for (var i = 1; i <= eps[j - 1]; i++) {
         var file = 'transcripts/' + j + '/' + i + '.txt';
@@ -30,7 +35,7 @@ function run(j) {
             async: false
         });
     }
-    span.innerHTML += "<br/>";
+    span.innerHTML += "<br/><br/>";
 }
 
 function runall() {
@@ -41,7 +46,7 @@ function runall() {
         return;
     }
     
-    span.innerHTML += "Searching " + s + "<br>";
+    span.innerHTML += "<span style=\"color:#84acba\">Results for </span>\"" + s + "\"<br>";
     
     for (var j = 1; j <= 15; j++) {
         var found = false;
